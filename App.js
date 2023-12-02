@@ -1,11 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View, Button } from "react-native";
+import { useState } from "react";
+import Auth from "./components/auth";
 export default function App() {
+  const [name, setName] = useState("Israel");
+
+  const changeName = () => {
+    setName("Another Israel");
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+       <StatusBar style="auto" />
+      <Auth />
     </View>
   );
 }
@@ -13,8 +20,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
